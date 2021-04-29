@@ -13,26 +13,24 @@ then
 
     PASSWD="$(zenity --password --title=Authentication)\n"
 
-        pkg="$(pacman -Qq | grep i3-gaps)"
-
-        if [ "${pkg}" = "i3-gaps" ]; then
-            notify-send "i3wm is already installed. Skipping!"   
-        else 
-            echo -e $PASSWD | sudo -S pacman -Syy i3-gaps
-            notify-send "installed i3wm"
+    pkg="$(pacman -Qq | grep i3-gaps)"
+    
+    if [ "${pkg}" = "i3-gaps" ]; then
+        notify-send "i3wm is already installed. Skipping!"   
+    else 
+        echo -e $PASSWD | sudo -S pacman -Syy i3-gaps
+        notify-send "installed i3wm"
+    fi
+    if zenity --question --text="Install Tint2 Panel?"
+    then 
+        pkg1="$(pacman -Qq | grep tint2)"
+        if [ "${pkg1}" = "tint2" ]; then
+            notify-send "Tint2 is already installed. Skipping!"
+        else
+            echo -e $PASSWD | sudo -S pacman -Syy tint2
+            notify-send "installed Tint2"
         fi
-
-        if zenity --question --text="Install Tint2 Panel?"
-        then 
-            pkg1="$(pacman -Qq | grep tint2)"
-
-            if [ "${pkg1}" = "tint2" ]; then
-                notify-send "Tint2 is already installed. Skipping!"
-            else
-                echo -e $PASSWD | sudo -S pacman -Syy tint2
-                notify-send "installed Tint2"
-            fi
-        fi
+    fi
 
 
 else
