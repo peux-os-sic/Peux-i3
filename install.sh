@@ -1,5 +1,11 @@
 #!/bin/bash
 
+
+##################################################
+## Author - DN-debug
+## Description - Peux i3WM setup via fetcher app
+##################################################
+
 # Install packages
 
 if zenity --question --text="Install i3wm?"
@@ -10,16 +16,21 @@ then
 
     if zenity --question --text="Install Tint2 Panel?"
     then 
-        PASSWD="$(zenity --password --title=Authentication)\n"
-        echo -e $PASSWD | sudo -S pacman -Sy tint2
-        notify-send "installed Tint2"
-    else
-        notify-send "skipping Tint2 installation!"
+        if pacman -Qq | grep tint2 == "tint2"
+        then 
+            PASSWD="$(zenity --password --title=Authentication)\n"
+            echo -e $PASSWD | sudo -S pacman -Sy tint2
+            notify-send "installed Tint2"
+        else
+            notify-send "Tint2 is already installed. Skipping!"
+        fi
     fi
 
 else
     notify-send "skipping i3wm installation!"
 fi
+
+# copy configurations
 
 if zenity --question --text="Want to copy the configurations?"
 then 
@@ -30,6 +41,8 @@ then
 else
     notify-send "skipping the setup!"
 fi
+
+# cleanup
 
 rm -rf /tmp/fetcher/Peux-i3
 notify-send "Done!"
