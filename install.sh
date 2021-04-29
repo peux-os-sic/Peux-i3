@@ -5,8 +5,8 @@
 if zenity --question --text="Install i3wm?"
 then 
     PASSWD="$(zenity --password --title=Authentication)\n"
-    echo -e $PASSWD | sudo -S pacman -Sy i3wm-gaps
-    notify-send "installed Bspwm"
+    echo -e $PASSWD | sudo -S pacman -Sy i3-gaps
+    notify-send "installed i3wm"
 
     if zenity --question --text="Install Tint2 Panel?"
     then 
@@ -23,8 +23,6 @@ fi
 
 if zenity --question --text="Want to copy the configurations?"
 then 
-    PASSWD="$(zenity --password --title=Authentication)\n"
-
     echo "changing directory"
     cd ../
     sudo -S cp -r Peux-i3/*/ $HOME/.config/
