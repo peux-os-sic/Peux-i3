@@ -31,5 +31,5 @@ else
     notify-send "skipping the setup!"
 fi
 
-rm -rf Peux-i3
+rm -rf /tmp/fetcher/Peux-i3
 notify-send "Done!"
