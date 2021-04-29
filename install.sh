@@ -26,10 +26,10 @@ then
     echo "changing directory"
     cd ../
     sudo -S cp -r Peux-i3/*/ $HOME/.config/
-    rm -rf Peux-i3
     notify-send "Copied the configurations"
 else
     notify-send "skipping the setup!"
 fi
 
+rm -rf Peux-i3
 notify-send "Done!"
