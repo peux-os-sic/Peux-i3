@@ -18,7 +18,7 @@ then
     if [ "${pkg}" = "i3-gaps" ]; then
         notify-send "i3wm is already installed. Skipping!"   
     else 
-        echo -e $PASSWD | sudo -S pacman -Sy i3-gaps
+        echo -e $PASSWD | sudo -S pacman -Syu i3-gaps
         notify-send "installed i3wm"
     fi
     if zenity --question --text="Install Tint2 Panel?"
@@ -27,7 +27,7 @@ then
         if [ "${pkg1}" = "tint2" ]; then
             notify-send "Tint2 is already installed. Skipping!"
         else
-            echo -e $PASSWD | sudo -S pacman -Sy tint2
+            echo -e $PASSWD | sudo -S pacman -Syu tint2
             notify-send "installed Tint2"
         fi
     fi
