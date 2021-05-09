@@ -358,8 +358,8 @@ separator_padding = 0 0
 # Separator 2
 separator = new
 separator_background_id = 0
-separator_color = #333333 100
-separator_style = line
+separator_color = #777777 100
+separator_style = dots
 separator_size = 3
 separator_padding = 0 0
 
@@ -413,7 +413,7 @@ separator_padding = 0 0
 separator = new
 separator_background_id = 0
 separator_color = #777777 100
-separator_style = line
+separator_style = dots
 separator_size = 3
 separator_padding = 0 0
 
@@ -422,7 +422,7 @@ separator_padding = 0 0
 separator = new
 separator_background_id = 0
 separator_color = #777777 100
-separator_style = line
+separator_style = dots
 separator_size = 3
 separator_padding = 0 0
 
@@ -431,7 +431,7 @@ separator_padding = 0 0
 separator = new
 separator_background_id = 0
 separator_color = #777777 100
-separator_style = line
+separator_style = dots
 separator_size = 3
 separator_padding = 0 0
 
@@ -441,7 +441,7 @@ separator_padding = 0 0
 separator = new
 separator_background_id = 0
 separator_color = #777777 100
-separator_style = line
+separator_style = dots
 separator_size = 3
 separator_padding = 0 0
 
