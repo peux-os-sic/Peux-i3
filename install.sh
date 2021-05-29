@@ -19,6 +19,8 @@ then
         notify-send "i3wm is already installed. Skipping!"   
     else 
         echo -e $PASSWD | sudo -S pacman -Syu i3-gaps
+        # dependencies of the system
+        echo -e $PASSWD | sudo -S pacman -Syu feh picom ttf-font-awesome i3lock
         notify-send "installed i3wm"
     fi
     if zenity --question --text="Install Tint2 Panel?"
